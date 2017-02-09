@@ -1,0 +1,58 @@
+﻿@model OilProducts.Models.OrderDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderDetails</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.orderId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.discount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.orderDetailsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

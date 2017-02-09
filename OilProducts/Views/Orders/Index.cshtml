@@ -1,0 +1,123 @@
+﻿@model IEnumerable<OilProducts.Models.Orders>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.customerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deliveryCompanyId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipPostalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipPhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shippingMethodId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.freightCharge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paymentsId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.deliveryCompanyId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shipName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shipCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shipState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shipCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shipPostalCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shipAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shipPhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shipDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shippingMethodId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.freightCharge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paymentsId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ordersId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ordersId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ordersId })
+        </td>
+    </tr>
+}
+
+</table>

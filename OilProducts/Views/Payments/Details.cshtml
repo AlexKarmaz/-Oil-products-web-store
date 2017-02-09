@@ -1,0 +1,74 @@
+﻿@model OilProducts.Models.Payments
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Payments</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.orderId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paymentAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paymentAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paymentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paymentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cardNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cardNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cardHoldersName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cardHoldersName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cardExpDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cardExpDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cardAutorizationNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cardAutorizationNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.paymentsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
