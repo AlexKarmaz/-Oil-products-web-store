@@ -1,0 +1,98 @@
+﻿@model OilProducts.Models.BankPayments
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>BankPayments</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.bankPaymentsId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.orderId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.orderId)
+                @Html.ValidationMessageFor(model => model.orderId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.paymentAmount, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.paymentAmount)
+                @Html.ValidationMessageFor(model => model.paymentAmount)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.paymentDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.paymentDate)
+                @Html.ValidationMessageFor(model => model.paymentDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nameBank, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nameBank)
+                @Html.ValidationMessageFor(model => model.nameBank)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.swift, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.swift)
+                @Html.ValidationMessageFor(model => model.swift)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.accountNumber, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.accountNumber)
+                @Html.ValidationMessageFor(model => model.accountNumber)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.passportSeries, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.passportSeries)
+                @Html.ValidationMessageFor(model => model.passportSeries)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.passportId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.passportId)
+                @Html.ValidationMessageFor(model => model.passportId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

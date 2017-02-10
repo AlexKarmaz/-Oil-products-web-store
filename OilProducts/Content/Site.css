@@ -3,6 +3,20 @@
     padding-bottom: 20px;
 }
 
+body::after {
+  content: "";
+  /*background: url(/Content/Img/background2.jpg);*/
+  background: url(/Content/Img/backimg.jpg);
+  opacity: 0.3;
+  background-size :cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;

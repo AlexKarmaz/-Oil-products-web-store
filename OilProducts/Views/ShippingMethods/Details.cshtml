@@ -1,0 +1,34 @@
+﻿@model OilProducts.Models.ShippingMethods
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ShippingMethods</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.shippingMethodName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.shippingMethodName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.taxeRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.taxeRate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.shippingMethodsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

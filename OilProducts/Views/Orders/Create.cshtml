@@ -24,10 +24,8 @@
         </div>
 
         <div class="form-group">
-            @*@Html.LabelFor(model => model.customerId, new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
                 @Html.HiddenFor( model => model.customerId )
-                @*@Html.ValidationMessageFor(model => model.customerId)*@
             </div>
         </div>
     
@@ -134,18 +132,30 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.totalPrice, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.freightCharge, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.totalPrice)
-                @Html.ValidationMessageFor(model => model.totalPrice)
+                @Html.EditorFor(model => model.freightCharge)
+                @Html.ValidationMessageFor(model => model.freightCharge)
             </div>
         </div>
 
         <div class="form-group">
-            @*@Html.LabelFor(model => model.paymentsId, new { @class = "control-label col-md-2" })*@
+            @Html.LabelFor(model => model.productId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.productId)
+                @Html.ValidationMessageFor(model => model.productId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.totalPrice)
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-10">
                 @Html.HiddenFor(model => model.paymentsId)
-                @*@Html.ValidationMessageFor(model => model.paymentsId)*@
             </div>
         </div>
 

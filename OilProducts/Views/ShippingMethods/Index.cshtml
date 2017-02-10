@@ -1,0 +1,39 @@
+﻿@model IEnumerable<OilProducts.Models.ShippingMethods>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.shippingMethodName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.taxeRate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.shippingMethodName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.taxeRate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.shippingMethodsId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.shippingMethodsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.shippingMethodsId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<OilProducts.Models.BankPayments>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.orderId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paymentAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paymentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nameBank)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.swift)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.accountNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.passportSeries)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.passportId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paymentAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paymentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nameBank)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.swift)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.accountNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.passportSeries)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.passportId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.bankPaymentsId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.bankPaymentsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.bankPaymentsId })
+        </td>
+    </tr>
+}
+
+</table>

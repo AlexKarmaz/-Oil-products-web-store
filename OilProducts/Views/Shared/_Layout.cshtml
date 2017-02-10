@@ -11,17 +11,10 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
-            </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li><img src="~/Content/Img/logomycompany.jpg" width="50" height="50" /> </li>
+                    <li>@Html.ActionLink("KcOil.ltd", "Index", "Home")</li>
                     <li>@Html.ActionLink("Show products", "Index", "Products")</li>
                     <li>@Html.ActionLink("Show delivery company", "Index", "DeliveryCompany")</li>
                     <li>@Html.ActionLink("Show all orders", "Index", "Orders")</li>
@@ -44,5 +37,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>

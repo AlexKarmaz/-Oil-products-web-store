@@ -14,7 +14,7 @@ namespace OilProducts.Models
         public string shippingMethodName { get; set; }
         [Required]
         [Display(Name = "Taxe rate")]
-        public double taxeRate { get; set; }
+        public string taxeRate { get; set; }
 
     }
 }

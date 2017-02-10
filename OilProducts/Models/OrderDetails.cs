@@ -14,13 +14,13 @@ namespace OilProducts.Models
         public int orderId { get; set; }
         [Required]
         [Display(Name = "Product ")]
-        public int productId { get; set; }
-        [Required]
-        [Display(Name = "Quantity")]
-        public int quantity { get; set; }
+        public string productName { get; set; }
         [Required]
         [Display(Name = "Unit price")]
         public int UnitPrice { get; set; }
+        [Required]
+        [Display(Name = "Quantity")]
+        public int quantity { get; set; }
         [Required]
         [Display(Name = "Discount")]
         public double discount { get; set; }

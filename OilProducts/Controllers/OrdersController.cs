@@ -60,7 +60,7 @@ namespace OilProducts.Controllers
                 orders.orderDate = DateTime.Now;
                 db.Orders.Add(orders);
                 db.SaveChanges();
-                return RedirectToAction("Create", "OrderDetails", new { id = orders.ordersId });
+                return RedirectToAction("Create", "OrderDetails", new { id = orders.ordersId, prodId = orders.productId });
                // return RedirectToAction("Index");
             }
 

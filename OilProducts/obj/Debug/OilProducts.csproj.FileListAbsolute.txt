@@ -121,3 +121,6 @@ F:\OilProducts\OilProducts\obj\Debug\OilProducts.Migrations.OrderDetails.resourc
 F:\OilProducts\OilProducts\obj\Debug\OilProducts.Migrations.fourth.resources
 F:\OilProducts\OilProducts\obj\Debug\OilProducts.Migrations.createProducts.resources
 F:\OilProducts\OilProducts\obj\Debug\OilProducts.Migrations.companyNametoString.resources
+F:\OilProducts\OilProducts\obj\Debug\OilProducts.Migrations.OrderandOrderDetailschange.resources
+F:\OilProducts\OilProducts\obj\Debug\OilProducts.Migrations.addBankPayments.resources
+F:\OilProducts\OilProducts\obj\Debug\OilProducts.Migrations.taxeRatetoString.resources

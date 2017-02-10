@@ -36,13 +36,14 @@ namespace OilProducts.Controllers
         }
 
         // GET: /OrderDetails/Create
-        public ActionResult Create(int? id)
+        public ActionResult Create(int? id = 3, int? prodId = 2)
         {
-            if (id == null)
+            if (id == null || prodId == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OrderDetails orderDetails = new OrderDetails { orderId = (int)id};
+            Products newprod = db.Products.Find(prodId);
+            OrderDetails orderDetails = new OrderDetails { orderId = (int)id , productName = newprod.productName, UnitPrice = newprod.price};
             return View(orderDetails);
         }
 
@@ -57,7 +58,7 @@ namespace OilProducts.Controllers
             {
                 db.OrderDetails.Add(orderdetails);
                 db.SaveChanges();
-                return RedirectToAction("Create", "Payments", new { id = orderdetails.orderId });
+                return RedirectToAction("Create", "BankPayments", new { id = orderdetails.orderId });
             }
 
             return View(orderdetails);

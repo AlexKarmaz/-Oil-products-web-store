@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BankPaymentsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\DeliveryCompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -166,6 +167,7 @@
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ShippingMethodsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,8 +203,21 @@
     <Compile Include="Migrations\201702091204013_companyNametoString.Designer.cs">
       <DependentUpon>201702091204013_companyNametoString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702101400257_Order and OrderDetails change.cs" />
+    <Compile Include="Migrations\201702101400257_Order and OrderDetails change.Designer.cs">
+      <DependentUpon>201702101400257_Order and OrderDetails change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702101430355_addBankPayments.cs" />
+    <Compile Include="Migrations\201702101430355_addBankPayments.Designer.cs">
+      <DependentUpon>201702101430355_addBankPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702101441186_taxeRatetoString.cs" />
+    <Compile Include="Migrations\201702101441186_taxeRatetoString.Designer.cs">
+      <DependentUpon>201702101441186_taxeRatetoString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BankPayments.cs" />
     <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\DeliveryCompany.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -286,6 +301,16 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\ShippingMethods\Create.cshtml" />
+    <Content Include="Views\ShippingMethods\Delete.cshtml" />
+    <Content Include="Views\ShippingMethods\Details.cshtml" />
+    <Content Include="Views\ShippingMethods\Edit.cshtml" />
+    <Content Include="Views\ShippingMethods\Index.cshtml" />
+    <Content Include="Views\BankPayments\Create.cshtml" />
+    <Content Include="Views\BankPayments\Delete.cshtml" />
+    <Content Include="Views\BankPayments\Details.cshtml" />
+    <Content Include="Views\BankPayments\Edit.cshtml" />
+    <Content Include="Views\BankPayments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -323,6 +348,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702091204013_companyNametoString.resx">
       <DependentUpon>201702091204013_companyNametoString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702101400257_Order and OrderDetails change.resx">
+      <DependentUpon>201702101400257_Order and OrderDetails change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702101430355_addBankPayments.resx">
+      <DependentUpon>201702101430355_addBankPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702101441186_taxeRatetoString.resx">
+      <DependentUpon>201702101441186_taxeRatetoString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

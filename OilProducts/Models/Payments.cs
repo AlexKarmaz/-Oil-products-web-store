@@ -16,7 +16,7 @@ namespace OilProducts.Models
         [Display(Name = "Payment amount")]
         public double paymentAmount { get; set; }
         [Required]
-        [Display(Name = "Payment dame")]
+        [Display(Name = "Payment date")]
         public DateTime paymentDate { get; set; }
         [Required]
         [Display(Name = "Card number")]

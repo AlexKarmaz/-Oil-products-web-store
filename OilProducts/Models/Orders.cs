@@ -52,6 +52,9 @@ namespace OilProducts.Models
         [Display(Name = "Freight charge")]
         public int freightCharge { get; set; }
         [Required]
+        [Display(Name = "Product id")]
+        public int productId { get; set; }
+        [Required]
         [Display(Name = "Total price")]
         public double totalPrice { get; set; }
         [Required]
