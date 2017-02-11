@@ -1,4 +1,4 @@
-﻿@model OilProducts.Models.BankPayments
+﻿ @model OilProducts.Models.BankPayments
 
 @{
     ViewBag.Title = "Create";
@@ -17,26 +17,16 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.orderId, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.orderId)
-                @Html.ValidationMessageFor(model => model.orderId)
+                @Html.HiddenFor(model => model.orderId)
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.paymentAmount, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.paymentAmount)
-                @Html.ValidationMessageFor(model => model.paymentAmount)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.paymentDate, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.paymentDate)
-                @Html.ValidationMessageFor(model => model.paymentDate)
+                @Html.HiddenFor(model => model.paymentAmount)
+                @Html.DisplayFor(model => model.paymentAmount)
             </div>
         </div>
 

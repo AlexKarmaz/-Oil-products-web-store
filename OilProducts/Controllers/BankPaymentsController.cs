@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -42,7 +42,15 @@ namespace OilProducts.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            //var unPrice = from i in db.OrderDetails where i.orderId ==  id select i.UnitPrice;
+
+            int unitPrice = db.OrderDetails.FirstOrDefault(it => it.orderId == id).UnitPrice;
+            double discount = db.OrderDetails.FirstOrDefault(it => it.orderId == id).discount;
+            int quantity = db.OrderDetails.FirstOrDefault(it => it.orderId == id).quantity;
+            int freightCharge = db.Orders.Find(id).freightCharge;
+            string taxeRate = db.ShippingMethods.Find(db.Orders.Find(id).shippingMethodId).taxeRate;            
             BankPayments bankPayments = new BankPayments { orderId = (int)id };
+            bankPayments.paymentAmount = unitPrice*quantity - (unitPrice*quantity*discount*0.01) + freightCharge*Convert.ToDouble(taxeRate);
             return View(bankPayments);
         }
 
@@ -59,6 +67,7 @@ namespace OilProducts.Controllers
                 db.SaveChanges();
                 Orders order = db.Orders.Find(bankpayments.orderId);
                 order.paymentsId = bankpayments.bankPaymentsId;
+                order.totalPrice = bankpayments.paymentAmount;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
