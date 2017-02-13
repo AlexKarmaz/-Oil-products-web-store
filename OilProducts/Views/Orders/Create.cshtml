@@ -32,14 +32,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.deliveryCompanyId, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.deliveryCompanyId)
-                @Html.ValidationMessageFor(model => model.deliveryCompanyId)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.HiddenFor(model => model.orderDate)
+                @*@Html.EditorFor(model => model.deliveryCompanyId)
+                @Html.ValidationMessageFor(model => model.deliveryCompanyId)*@
+                @Html.DropDownListFor(x => x.deliveryCompanyId, ViewBag.DeliveryComp as SelectList)
             </div>
         </div>
 
@@ -118,16 +113,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.shippingMethodId, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.shippingMethodId)
-                @Html.ValidationMessageFor(model => model.shippingMethodId)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.freightCharge, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.freightCharge)
-                @Html.ValidationMessageFor(model => model.freightCharge)
+                @*@Html.EditorFor(model => model.shippingMethodId)
+                @Html.ValidationMessageFor(model => model.shippingMethodId)*@
+                @Html.DropDownListFor(x => x.shippingMethodId, ViewBag.ShippingMethod as SelectList)
             </div>
         </div>
 
@@ -142,8 +130,10 @@
         <div class="form-group">
             @Html.LabelFor(model => model.productId, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.productId)
-                @Html.ValidationMessageFor(model => model.productId)
+                @*@Html.EditorFor(model => model.productId)
+                @Html.ValidationMessageFor(model => model.productId)*@
+                @Html.DropDownListFor(x => x.productId, ViewBag.Products as SelectList)
+                @*@Html.HiddenFor(model => model.productId)*@
             </div>
         </div>
 

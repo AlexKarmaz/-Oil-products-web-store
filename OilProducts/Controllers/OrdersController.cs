@@ -36,14 +36,20 @@ namespace OilProducts.Controllers
         }
 
         // GET: /Orders/Create
-        public ActionResult Create(int? id)
+        public ActionResult Create(int? id = 8)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Orders order = new Orders { customerId = (int) id , paymentsId = 0};
 
+            SelectList products = new SelectList(db.Products, "productsId", "productName");
+            SelectList deliveryComp = new SelectList(db.DeliveryCompanies, "deliveryCompanyId", "companyName");
+            SelectList shippingMethod = new SelectList(db.ShippingMethods, "shippingMethodsId", "shippingMethodName");
+            Orders order = new Orders { customerId = (int) id , paymentsId = 0};
+            ViewBag.Products = products;
+            ViewBag.DeliveryComp = deliveryComp;
+            ViewBag.ShippingMethod = shippingMethod;
             return View(order);
         }
 

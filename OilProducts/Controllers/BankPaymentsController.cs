@@ -36,7 +36,7 @@ namespace OilProducts.Controllers
         }
 
         // GET: /BankPayments/Create
-        public ActionResult Create(int? id = 3)
+        public ActionResult Create(int? id)
         {
             if (id == null)
             {
@@ -48,7 +48,8 @@ namespace OilProducts.Controllers
             double discount = db.OrderDetails.FirstOrDefault(it => it.orderId == id).discount;
             int quantity = db.OrderDetails.FirstOrDefault(it => it.orderId == id).quantity;
             int freightCharge = db.Orders.Find(id).freightCharge;
-            string taxeRate = db.ShippingMethods.Find(db.Orders.Find(id).shippingMethodId).taxeRate;            
+            string taxeRate = db.ShippingMethods.Find(db.Orders.Find(id).shippingMethodId).taxeRate;   
+         
             BankPayments bankPayments = new BankPayments { orderId = (int)id };
             bankPayments.paymentAmount = unitPrice*quantity - (unitPrice*quantity*discount*0.01) + freightCharge*Convert.ToDouble(taxeRate);
             return View(bankPayments);

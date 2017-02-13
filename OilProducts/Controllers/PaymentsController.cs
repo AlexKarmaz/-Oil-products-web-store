@@ -36,7 +36,7 @@ namespace OilProducts.Controllers
         }
 
         // GET: /Payments/Create
-        public ActionResult Create(int? id = 3)
+        public ActionResult Create(int? id)
         {
             if (id == null)
             {

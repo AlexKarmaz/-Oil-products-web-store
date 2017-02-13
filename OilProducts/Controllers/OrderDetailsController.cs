@@ -36,7 +36,7 @@ namespace OilProducts.Controllers
         }
 
         // GET: /OrderDetails/Create
-        public ActionResult Create(int? id = 3, int? prodId = 2)
+        public ActionResult Create(int? id , int? prodId)
         {
             if (id == null || prodId == null)
             {
