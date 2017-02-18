@@ -76,6 +76,41 @@ namespace OilProducts.Controllers
             return View(bankpayments);
         }
 
+        public ActionResult Finish(int? id = 14)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Orders order = db.Orders.Find(id);
+            Customers custumer = db.Customers.Find(order.customerId);
+            string deliveryCompany = db.DeliveryCompanies.Find(order.deliveryCompanyId).companyName;
+            string shippingMethod = db.ShippingMethods.Find(order.shippingMethodId).shippingMethodName;
+            string productName = db.Products.Find(order.productId).productName;
+            //Object[] obj =  { custumer.firstName, custumer.lastName, custumer.companyName, custumer.phoneNumber, order.orderNumber, deliveryCompany, order.orderDate, shippingMethod, productName, order.totalPrice };
+            if (order == null || custumer == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.firstName = custumer.firstName;
+            ViewBag.lastName = custumer.lastName;
+            ViewBag.companyName = custumer.companyName;
+            ViewBag.phoneNumber = custumer.phoneNumber;
+            ViewBag.orderNumber = order.orderNumber;
+            ViewBag.deliveryCompany = deliveryCompany;
+            ViewBag.orderDate = order.orderDate;
+            ViewBag.shippingMethod = shippingMethod;
+            ViewBag.productName = productName;
+            ViewBag.totalPrice = order.totalPrice;
+            return View();
+            //return View(new { firstName = custumer.firstName, lastName = custumer.lastName, companyName = custumer.companyName, phoneNumber = custumer.phoneNumber, orderNumber = order.orderNumber, deliveryCompany = deliveryCompany, orderDate = order.orderDate, shippingMet = shippingMethod, productN = productName, totalPrice = order.totalPrice   });
+        }
+        [HttpPost]
+        public ViewResult SomeMethod()
+        {
+            return View("~/Views/Home/Index.cshtml");
+        }
+
         // GET: /BankPayments/Edit/5
         public ActionResult Edit(int? id)
         {

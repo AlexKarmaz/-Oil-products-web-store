@@ -3,5 +3,13 @@
 }
 
 <body>
-     @Html.ActionLink("Create order","Create", "Customers")
+    <p>
+        <img src="~/Content/Img/photo4.jpg" alt="Фотография 1" width="480" height="250">
+        <img src="~/Content/Img/photo2.jpg" alt="Фотография 2" width="480" height="250">
+        <img src="~/Content/Img/photo3.jpg" alt="Фотография 3" width="480" height="250">
+        <img src="~/Content/Img/photo7.jpg" alt="Фотография 4" width="480" height="250">
+    </p>
+    <p style="text-align: center;">
+        @Html.ActionLink("Create order", "Create", "Customers", null, new { @style = " font-weight: 700; color: white; margin-top:20px;text-decoration: none; padding: .8em 1em calc(.8em + 3px); border-radius: 3px; background: rgb(64,199,129); box-shadow: 0 -3px rgb(53,167,110) inset; transition: 0.2s;" })
+    </p>
 </body>
