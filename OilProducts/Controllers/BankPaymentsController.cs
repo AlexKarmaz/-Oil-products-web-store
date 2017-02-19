@@ -36,7 +36,7 @@ namespace OilProducts.Controllers
         }
 
         // GET: /BankPayments/Create
-        public ActionResult Create(int? id)
+        public ActionResult Create(int? id = 14)
         {
             if (id == null)
             {
@@ -70,13 +70,13 @@ namespace OilProducts.Controllers
                 order.paymentsId = bankpayments.bankPaymentsId;
                 order.totalPrice = bankpayments.paymentAmount;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Finish", "BankPayments", new {id = order.ordersId });
             }
 
             return View(bankpayments);
         }
 
-        public ActionResult Finish(int? id = 14)
+        public ActionResult Finish(int? id)
         {
             if (id == null)
             {
@@ -106,10 +106,10 @@ namespace OilProducts.Controllers
             //return View(new { firstName = custumer.firstName, lastName = custumer.lastName, companyName = custumer.companyName, phoneNumber = custumer.phoneNumber, orderNumber = order.orderNumber, deliveryCompany = deliveryCompany, orderDate = order.orderDate, shippingMet = shippingMethod, productN = productName, totalPrice = order.totalPrice   });
         }
         [HttpPost]
-        public ViewResult SomeMethod()
-        {
-            return View("~/Views/Home/Index.cshtml");
-        }
+        //public ViewResult SomeMethod()
+        //{
+        //    return View("~/Views/Home/Index.cshtml");
+        //}
 
         // GET: /BankPayments/Edit/5
         public ActionResult Edit(int? id)
