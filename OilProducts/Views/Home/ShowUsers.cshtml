@@ -1,0 +1,39 @@
+﻿@using OilProducts.Models;
+
+@model System.Collections.Generic.IList<ApplicationUser>
+
+@{
+    ViewBag.Title = "ShowUsers";
+}
+
+<h2>All users</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            User id
+        </th>
+        <th>
+            User name
+        </th>
+        <th>
+            User roles
+        </th>
+    </tr>
+
+    @foreach (ApplicationUser user in Model) 
+    {
+        <tr>
+            <td>
+                @user.Id
+            </td>
+            <td>
+                @user.UserName
+            </td>
+            <td>
+                @user.Roles
+            </td>
+        </tr>
+    }
+
+</table>

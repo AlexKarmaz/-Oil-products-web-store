@@ -312,6 +312,7 @@
     <Content Include="Views\BankPayments\Edit.cshtml" />
     <Content Include="Views\BankPayments\Index.cshtml" />
     <Content Include="Views\BankPayments\Finish.cshtml" />
+    <Content Include="Views\Home\ShowUsers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
