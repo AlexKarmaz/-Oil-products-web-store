@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using OilProducts.Models;
+using System.Threading.Tasks;
 
 namespace OilProducts.Controllers
 {
@@ -15,12 +16,14 @@ namespace OilProducts.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: /Customers/
-        public ActionResult Index()
+        [Authorize]
+        public async Task<ActionResult> Index()
         {
-            return View(db.Customers.ToList());
+            return View(await db.Customers.ToListAsync());
         }
 
         // GET: /Customers/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -29,6 +32,7 @@ namespace OilProducts.Controllers
         // POST: /Customers/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "firstName,lastName,companyName,country,state,city,postalCode,address,phoneNumber,email")] Customers customers)
         {
             if (ModelState.IsValid)

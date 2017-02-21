@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using OilProducts.Models;
 using System.Security;
 using System.Web.Security;
+using System.Threading.Tasks;
 
 namespace OilProducts.Controllers
 {
@@ -19,11 +20,13 @@ namespace OilProducts.Controllers
         {
             return View();
         }
-        public ActionResult ShowUsers()
+
+        [Authorize]
+        public async Task<ActionResult> ShowUsers()
         {
             //MembershipUserCollection users = Membership.GetAllUsers();
             //var users = db.Users.ToList();
-            System.Collections.Generic.IList<ApplicationUser> users = db.Users.ToList();
+            System.Collections.Generic.IList<ApplicationUser> users = await db.Users.ToListAsync();
             return View(users);
         }
 

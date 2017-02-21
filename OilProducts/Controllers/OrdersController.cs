@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using OilProducts.Models;
+using System.Threading.Tasks;
 
 namespace OilProducts.Controllers
 {
@@ -15,12 +16,14 @@ namespace OilProducts.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: /Orders/
-        public ActionResult Index()
+        [Authorize] 
+        public async Task<ActionResult> Index()
         {
-            return View(db.Orders.ToList());
+            return View(await db.Orders.ToListAsync());
         }
 
         // GET: /Orders/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +39,7 @@ namespace OilProducts.Controllers
         }
 
         // GET: /Orders/Create
+        [Authorize]
         public ActionResult Create(int? id)
         {
             if (id == null)
@@ -59,6 +63,7 @@ namespace OilProducts.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(Orders orders)
         {
             if (ModelState.IsValid)
@@ -74,6 +79,7 @@ namespace OilProducts.Controllers
         }
 
         // GET: /Orders/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -93,6 +99,7 @@ namespace OilProducts.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include="ordersId,customerId,deliveryCompanyId,orderDate,orderNumber,shipName,shipCountry,shipState,shipCity,shipPostalCode,shipAddress,shipPhoneNumber,shipDate,shippingMethodId,freightCharge,totalPrice,paymentsId")] Orders orders)
         {
             if (ModelState.IsValid)
@@ -105,6 +112,7 @@ namespace OilProducts.Controllers
         }
 
         // GET: /Orders/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

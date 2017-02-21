@@ -15,12 +15,14 @@ namespace OilProducts.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: /BankPayments/
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.BankPayments.ToList());
         }
 
         // GET: /BankPayments/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +38,7 @@ namespace OilProducts.Controllers
         }
 
         // GET: /BankPayments/Create
+        [Authorize]
         public ActionResult Create(int? id)
         {
             if (id == null)
@@ -60,6 +63,7 @@ namespace OilProducts.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(BankPayments bankpayments){
             if (ModelState.IsValid)
             {
@@ -76,6 +80,7 @@ namespace OilProducts.Controllers
             return View(bankpayments);
         }
 
+        [Authorize]
         public ActionResult Finish(int? id)
         {
             if (id == null)
@@ -112,6 +117,7 @@ namespace OilProducts.Controllers
         //}
 
         // GET: /BankPayments/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -131,6 +137,7 @@ namespace OilProducts.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include="bankPaymentsId,orderId,paymentAmount,paymentDate,nameBank,swift,accountNumber,passportSeries,passportId")] BankPayments bankpayments)
         {
             if (ModelState.IsValid)
@@ -143,6 +150,7 @@ namespace OilProducts.Controllers
         }
 
         // GET: /BankPayments/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -160,6 +168,7 @@ namespace OilProducts.Controllers
         // POST: /BankPayments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             BankPayments bankpayments = db.BankPayments.Find(id);
