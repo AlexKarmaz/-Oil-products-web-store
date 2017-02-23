@@ -10,6 +10,7 @@ using OilProducts.Models;
 using System.Security;
 using System.Web.Security;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 
 namespace OilProducts.Controllers
 {
@@ -24,10 +25,28 @@ namespace OilProducts.Controllers
         [Authorize]
         public async Task<ActionResult> ShowUsers()
         {
-            //MembershipUserCollection users = Membership.GetAllUsers();
-            //var users = db.Users.ToList();
             System.Collections.Generic.IList<ApplicationUser> users = await db.Users.ToListAsync();
             return View(users);
+        }
+
+        [Authorize]
+        public ActionResult CheckAdmin()
+        {
+            
+            return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult CheckAdmin(string AdminPassword)
+        {
+            String password = "123456";
+            if (password.Equals(AdminPassword))
+            {
+                Roles.AddUserToRole("User.Identity.GetUserId", "admin");
+                return RedirectToAction("Index", "Home");
+            }
+            return PartialView("CheckAdminPartial");
         }
 
         public ActionResult Create()
