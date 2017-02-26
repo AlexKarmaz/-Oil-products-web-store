@@ -14,6 +14,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using System.Data.Entity;
+using OilProducts.Filters;
+using System.Threading;
+using System.Security.Principal;
 
 namespace OilProducts.Controllers
 {
@@ -25,8 +28,8 @@ namespace OilProducts.Controllers
             return View();
         }
 
-        [Authorize]
-        [Authorize(Roles = "admin")]
+        
+        [CustomAuthAttribute]
         public async Task<ActionResult> ShowUsers()
         {
             System.Collections.Generic.IList<ApplicationUser> users = await db.Users.ToListAsync();
@@ -45,15 +48,16 @@ namespace OilProducts.Controllers
         public ActionResult CheckAdmin(string AdminPassword)
         {
             String password = "123456";
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
+            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
             UserManager<ApplicationUser> userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-            var roleAdmin = new IdentityRole("admin");
-            roleManager.Create(roleAdmin);
+            //var roleAdmin = new IdentityRole("admin");
+            //roleManager.Create(roleAdmin);
             var result = userManager.FindById(User.Identity.GetUserId());
-            if (password.Equals(AdminPassword));
+
+            if (password.Equals(AdminPassword)) 
             {
-               userManager.AddToRole(User.Identity.GetUserId(), roleAdmin.Name);
-               return RedirectToAction("Index", "Home");
+                userManager.AddToRole(User.Identity.GetUserId(), "admin");
+                return RedirectToAction("Index", "Home");
             }
             return PartialView("CheckAdminPartial");
         }

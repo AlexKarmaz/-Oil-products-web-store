@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin;
+﻿//Author - Karmaz Alex, Belarus , 2017.
+using Microsoft.Owin;
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(OilProducts.Startup))]

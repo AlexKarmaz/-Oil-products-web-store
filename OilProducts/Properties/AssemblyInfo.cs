@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿//Author - Karmaz Alex, Belarus , 2017.
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
