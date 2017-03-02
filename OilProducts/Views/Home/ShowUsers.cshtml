@@ -25,9 +25,10 @@
                 @user.UserName
             </td>
             <td>
-                @user.SecurityStamp
+                @string.Join(",",user.Roles.Select(r=>r.Role.Name))
             </td>
         </tr>
+                
     }
 
 </table>

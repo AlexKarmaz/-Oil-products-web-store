@@ -50,7 +50,7 @@ namespace OilProducts.Controllers
             String password = "123456";
             //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
             UserManager<ApplicationUser> userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-            //var roleAdmin = new IdentityRole("admin");
+           // var roleAdmin = new IdentityRole("admin");
             //roleManager.Create(roleAdmin);
             var result = userManager.FindById(User.Identity.GetUserId());
 

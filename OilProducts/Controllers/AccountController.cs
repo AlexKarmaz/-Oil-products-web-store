@@ -82,7 +82,9 @@ namespace OilProducts.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    await UserManager.AddToRoleAsync(user.Id, "user");
                     await SignInAsync(user, isPersistent: false);
+
                     return RedirectToAction("Index", "Home");
                 }
                 else
