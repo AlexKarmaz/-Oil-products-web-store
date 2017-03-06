@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Calabonga.Xml.Exports, Version=1.6.4961.16766, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XmlExport.1.0.0\lib\net40\Calabonga.Xml.Exports.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />

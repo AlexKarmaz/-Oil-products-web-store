@@ -124,3 +124,4 @@ F:\OilProducts\OilProducts\obj\Debug\OilProducts.Migrations.companyNametoString.
 F:\OilProducts\OilProducts\obj\Debug\OilProducts.Migrations.OrderandOrderDetailschange.resources
 F:\OilProducts\OilProducts\obj\Debug\OilProducts.Migrations.addBankPayments.resources
 F:\OilProducts\OilProducts\obj\Debug\OilProducts.Migrations.taxeRatetoString.resources
+F:\OilProducts\OilProducts\bin\Calabonga.Xml.Exports.dll
