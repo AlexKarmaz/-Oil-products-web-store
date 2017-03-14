@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using OilProducts.Models;
 using System.Threading.Tasks;
+using OilProducts.Filters;
 
 namespace OilProducts.Controllers
 {
@@ -24,6 +25,7 @@ namespace OilProducts.Controllers
 
         // GET: /DeliveryCompany/Details/5
         [Authorize]
+        [CustomAuthAttribute]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -40,6 +42,7 @@ namespace OilProducts.Controllers
 
         // GET: /DeliveryCompany/Create
         [Authorize]
+        [CustomAuthAttribute]
         public ActionResult Create()
         {
             return View();
@@ -65,6 +68,7 @@ namespace OilProducts.Controllers
 
         // GET: /DeliveryCompany/Edit/5
         [Authorize]
+        [CustomAuthAttribute]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -84,6 +88,7 @@ namespace OilProducts.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomAuthAttribute]
         [Authorize]
         public ActionResult Edit([Bind(Include="deliveryCompanyId,companyName,companyEmail,companyPhone,logo")] DeliveryCompany deliverycompany)
         {
@@ -98,6 +103,7 @@ namespace OilProducts.Controllers
 
         // GET: /DeliveryCompany/Delete/5
         [Authorize]
+        [CustomAuthAttribute]
         public ActionResult Delete(int? id)
         {
             if (id == null)

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using OilProducts.Models;
+using OilProducts.Filters;
 
 namespace OilProducts.Controllers
 {
@@ -22,6 +23,7 @@ namespace OilProducts.Controllers
 
         // GET: /Products/Details/5
         [Authorize]
+        [CustomAuthAttribute]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +40,7 @@ namespace OilProducts.Controllers
 
         // GET: /Products/Create
         [Authorize]
+        [CustomAuthAttribute]
         public ActionResult Create()
         {
             return View();
@@ -63,6 +66,7 @@ namespace OilProducts.Controllers
 
         // GET: /Products/Edit/5
         [Authorize]
+        [CustomAuthAttribute]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,6 +87,7 @@ namespace OilProducts.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
+        [CustomAuthAttribute]
         public ActionResult Edit([Bind(Include="productsId,productName,price")] Products products)
         {
             if (ModelState.IsValid)
@@ -96,6 +101,7 @@ namespace OilProducts.Controllers
 
         // GET: /Products/Delete/5
         [Authorize]
+        [CustomAuthAttribute]
         public ActionResult Delete(int? id)
         {
             if (id == null)

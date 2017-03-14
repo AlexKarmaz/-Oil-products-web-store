@@ -2,14 +2,67 @@
     ViewBag.Title = "Home Page";
 }
 
+<style>
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+        margin: auto;
+        width: 900px;
+        height: 520px;
+    }
+</style>
+
 <body>
-    <p>
-        <img src="~/Content/Img/photo4.jpg" alt="Фотография 1" width="500" height="270">
-        <img src="~/Content/Img/photo2.jpg" alt="Фотография 2" width="500" height="270">
-        <img src="~/Content/Img/photo3.jpg" alt="Фотография 3" width="500" height="270">
-        <img src="~/Content/Img/photo7.jpg" alt="Фотография 4" width="500" height="270">
-    </p>
-    <p style="text-align: center;">
-        @Html.ActionLink("Create order", "Create", "Customers", null, new { @style = " font-weight: 700; color: white; margin-top:20px;text-decoration: none; padding: .8em 1em calc(.8em + 3px); border-radius: 3px; background: rgb(64,199,129); box-shadow: 0 -3px rgb(53,167,110) inset; transition: 0.2s;" })
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="~/Content/Img/photo2.jpg" alt="Photo1"  width="500" height="270">
+                <div class="carousel-caption">
+                    <h3>Reliable team</h3>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="~/Content/Img/photo3.jpg" alt="Photo2" width="500" height="270">
+                <div class="carousel-caption">
+                    <h3>Verified suppliers</h3>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="~/Content/Img/photo7.jpg" alt="Photo3" width="500" height="270">
+                <div class="carousel-caption">
+                    <h3>Fast transportation</h3>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="~/Content/Img/photo4.jpg" alt="Photo4" width="500" height="270">
+                <div class="carousel-caption">
+                    <h3>Quality work</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <p style="text-align: center; margin: auto; margin-top: 20px">
+        @Html.ActionLink("Create order", "Create", "Customers", null, new { @style = " font-weight: 700; color: white; margin: auto; text-decoration: none; padding: .8em 1em calc(.8em + 3px); border-radius: 3px; background: rgb(64,199,129); box-shadow: 0 -3px rgb(53,167,110) inset; transition: 0.2s;" })
     </p>
 </body>

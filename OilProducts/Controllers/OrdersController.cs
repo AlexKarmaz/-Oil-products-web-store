@@ -10,6 +10,7 @@ using OilProducts.Models;
 using System.Threading.Tasks;
 using System.IO;
 using System.ComponentModel;
+using OilProducts.Filters;
 
 namespace OilProducts.Controllers
 {
@@ -26,6 +27,7 @@ namespace OilProducts.Controllers
 
         // GET: /Orders/Details/5
         [Authorize]
+        [CustomAuthAttribute]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -82,6 +84,7 @@ namespace OilProducts.Controllers
 
         // GET: /Orders/Edit/5
         [Authorize]
+        [CustomAuthAttribute]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -102,6 +105,7 @@ namespace OilProducts.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
+        [CustomAuthAttribute]
         public ActionResult Edit([Bind(Include="ordersId,customerId,deliveryCompanyId,orderDate,orderNumber,shipName,shipCountry,shipState,shipCity,shipPostalCode,shipAddress,shipPhoneNumber,shipDate,shippingMethodId,freightCharge,totalPrice,paymentsId")] Orders orders)
         {
             if (ModelState.IsValid)
@@ -115,6 +119,7 @@ namespace OilProducts.Controllers
 
         // GET: /Orders/Delete/5
         [Authorize]
+        [CustomAuthAttribute]
         public ActionResult Delete(int? id)
         {
             if (id == null)

@@ -1,5 +1,6 @@
 ﻿@using OilProducts.Models;
 
+
 @model System.Collections.Generic.IList<ApplicationUser>
 
 @{
@@ -17,7 +18,7 @@
             User roles
         </th>
     </tr>
-
+    
     @foreach (ApplicationUser user in Model) 
     {
         <tr>
@@ -27,8 +28,6 @@
             <td>
                 @string.Join(",",user.Roles.Select(r=>r.Role.Name))
             </td>
-        </tr>
-                
+        </tr>              
     }
-
 </table>
